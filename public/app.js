@@ -4,7 +4,14 @@ let viewerCount = 0;
 let likeCount = 0;
 let diamondsCount = 0;
 
-uniqueId = 'spacetimejunction'
+$(document).ready(() => {
+    $('#connectButton').click(connect);
+    $('#uniqueIdInput').on('keyup', function (e) {
+        if (e.key === 'Enter') {
+            connect();
+        }
+    });
+})
 
 function connect() {
     let uniqueId = $('#uniqueIdInput').val();
