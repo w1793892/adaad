@@ -14,31 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script>
-    const { WebcastPushConnection } = require('tiktok-livestream-chat-connector');
-
-// Username of someone who is currently live
-    let tiktokUsername = "officialgeilegisela";
-
-// Create a new wrapper object and pass the username
-    let tiktokChatConnection = new WebcastPushConnection(tiktokUsername);
-
-// Connect to the chat (await can be used as well)
-    tiktokChatConnection.connect().then(state => {
-    console.info(`Connected to roomId ${state.roomId}`);
-    }).catch(err => {
-      console.error('Failed to connect', err);
-    })
-
-// Define the events that you want to handle
-// In this case we listen to chat messages (comments)
-   tiktokChatConnection.on('chat', data => {
-     return(`${data.uniqueId} (userId:${data.userId}) writes: ${data.comment}`);
-   })
-
-
-// ...and more events described in the documentation below
-    </script>
+    <script src="app.js"></script>
 </head>
 <body>
     <div class="head">
